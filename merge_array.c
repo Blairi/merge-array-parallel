@@ -34,14 +34,14 @@ int * merge_array_serial(int arr1[], int n, int arr2[], int m)
 		for (int j = 0; j < m; j++)
 			if (arr1[i] == arr2[j]) match_count ++;
 
-	int matchs[match_count][2];
+	int matches[match_count][2];
 	int aux = 0;
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
 			if (arr1[i] == arr2[j])
 			{
-				matchs[aux][0] = i;
-				matchs[aux][1] = j;
+				matches[aux][0] = i;
+				matches[aux][1] = j;
 				aux ++;
 			}
 
@@ -54,7 +54,7 @@ int * merge_array_serial(int arr1[], int n, int arr2[], int m)
 		int flag = -1;
 		for (int j = 0; j < match_count; j++)
 		{
-			if (i == matchs[j][0])
+			if (i == matches[j][0])
 			{
 				flag = 0;
 			}
@@ -72,7 +72,7 @@ int * merge_array_serial(int arr1[], int n, int arr2[], int m)
 		int flag = -1;
 		for (int j = 0; j < match_count; j++)
 		{
-			if (i == matchs[j][1])
+			if (i == matches[j][1])
 			{
 				flag = 0;
 			}
@@ -96,15 +96,15 @@ int * merge_array_parallel(int arr1[], int n, int arr2[], int m)
 		for (int j = 0; j < m; j++)
 			if (arr1[i] == arr2[j]) match_count ++;
 
-	int matchs[match_count][2];
+	int matches[match_count][2];
 	int aux = 0;
 
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
 			if (arr1[i] == arr2[j])
 			{
-				matchs[aux][0] = i;
-				matchs[aux][1] = j;
+				matches[aux][0] = i;
+				matches[aux][1] = j;
 				aux ++;
 			}
 
@@ -117,7 +117,7 @@ int * merge_array_parallel(int arr1[], int n, int arr2[], int m)
 		int flag = -1;
 		for (int j = 0; j < match_count; j++)
 		{
-			if (i == matchs[j][0])
+			if (i == matches[j][0])
 			{
 				flag = 0;
 			}
@@ -134,7 +134,7 @@ int * merge_array_parallel(int arr1[], int n, int arr2[], int m)
 		int flag = -1;
 		for (int j = 0; j < match_count; j++)
 		{
-			if (i == matchs[j][1])
+			if (i == matches[j][1])
 			{
 				flag = 0;
 			}
