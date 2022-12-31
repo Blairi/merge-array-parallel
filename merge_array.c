@@ -99,13 +99,17 @@ int * merge_array_parallel(int arr1[], int n, int arr2[], int m)
 	int matches[match_count][2];
 	int aux = 0;
 
+	#pragma omp parallel for
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
 			if (arr1[i] == arr2[j])
 			{
-				matches[aux][0] = i;
-				matches[aux][1] = j;
-				aux ++;
+				#pragma omp critical
+				{
+					matches[aux][0] = i;
+					matches[aux][1] = j;
+					aux ++;
+				}
 			}
 
 	int len = n + m - (match_count * 2);
