@@ -36,7 +36,7 @@ def main() -> None:
     ax.plot(n_serial, times_serial, label = 'Serial', marker = '*', color = 'b')
     ax.plot(n_parallel, times_parallel, label = 'Parallel', marker = '*', color = 'r')
     
-    plt.title('Selection sort\nParallel vs Serial')
+    plt.title('Merge array\nParallel vs Serial')
     ax.set_ylabel('Time (s)')
     ax.set_xlabel('Elements')
     ax.grid(True)
