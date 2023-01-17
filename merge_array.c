@@ -235,9 +235,9 @@ int * generate_array(int len)
 void func()
 {
 	FILE *file_serial;
-	file_serial = fopen("/home/blairi/development/C/merge-array-parallel/data/serial_time.txt", "w");
+	file_serial = fopen(PATH_SERIAL, "w");
 	FILE *file_parallel;
-	file_parallel = fopen("/home/blairi/development/C/merge-array-parallel/data/parallel_time.txt", "w");
+	file_parallel = fopen(PATH_PARALLEL, "w");
 
 	if ( file_serial == NULL || file_parallel == NULL )
 	{
@@ -246,11 +246,11 @@ void func()
 	}
 
 	// Resetting files
-	fclose(fopen("/home/blairi/development/C/merge-array-parallel/data/serial_time.txt", "w"));
-	fclose(fopen("/home/blairi/development/C/merge-array-parallel/data/parallel_time.txt", "w"));
+	fclose(fopen(PATH_SERIAL, "w"));
+	fclose(fopen(PATH_PARALLEL, "w"));
 
-	file_serial = fopen("/home/blairi/development/C/merge-array-parallel/data/serial_time.txt", "a");
-	file_parallel = fopen("/home/blairi/development/C/merge-array-parallel/data/parallel_time.txt", "a");
+	file_serial = fopen(PATH_SERIAL, "a");
+	file_parallel = fopen(PATH_PARALLEL, "a");
 
 	float ini, fin;
 	for (int i = 1; i <= MAX; i++)
