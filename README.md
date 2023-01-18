@@ -4,6 +4,7 @@ This application is created with the purpose the compare two implementations of 
 ## Summary
 - [Application](#application)
 - [Logic](#logic)
+- [How project works ?](#howprojectworks)
 
 ## Application <a name="application"></a>
 ![application](./img/set.png)
@@ -30,3 +31,8 @@ len = n + m - (match count * 2)
 
 Finally, iterate each element of the two arrays, ignoring the indexes saved in the prev matrix.
 ![logic2](./img/logic2.png)
+
+## How project works ? <a name="howprojectworks"></a>
+First, create two files, these will save the results of time execution for merging two arrays with the same length.
+
+When the two files are already saved with the results, graph them with Python trying to find the breakeven point.
