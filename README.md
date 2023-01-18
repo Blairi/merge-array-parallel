@@ -7,6 +7,7 @@ This application is created with the purpose the compare two implementations of 
 - [How project works ?](#howprojectworks)
 - [Requirements](#requirements)
 - [Compile and run](#compile-and-run)
+- [Results](#results)
 
 ## Application <a name="application"></a>
 ![application](./img/set.png)
@@ -71,3 +72,12 @@ and run:
 ```
 $ python3 graph/main.py
 ```
+## Results <a name="results"></a>
+To try the efficiency of the two implementations, create two same arrays with 5000 elements. How the algorithm works if the two arrays have the same length, have a cuadratic cost to compare each one elements in the arrays.
+![graph](./img/graph.png)
+
+So, when the two arrays with the same length to merge, is convenient parallelizing the algorithm if the number of elements are >= 280.
+
+**[1, ~280), (~280, 5000]**
+
+![breakeven](./img/point.png)
